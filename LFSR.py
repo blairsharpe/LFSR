@@ -26,12 +26,12 @@ def xor(state, inputs, length, invert):
 
 if __name__ == "__main__":
 
-    current_state = "00000000000000000000000000000001"
+    current_state = "001"
 
     # Position to tap for Xor gate
     index_inputs = [0, 2]
     max_clock = 100
-    invert = True
+    invert = False
 
     for clock in range(0, max_clock + 1):
 
