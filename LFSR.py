@@ -22,13 +22,16 @@ def xor(state, inputs, length):
 
 if __name__ == "__main__":
 
-    current_state = "010"
+    current_state = "001"
     index_inputs = [0, 2]
+    max_clock = 7
 
-    xor_output = xor(current_state, index_inputs, len(current_state)-1)
-    shift = int(current_state, 2) >> 1
-    result = xor_output | shift
+    for clock in range(0, max_clock + 1):
 
-    print(bin(result))
+        print(clock, current_state)
+        xor_output = xor(current_state, index_inputs, len(current_state)-1)
+        shift = int(current_state, 2) >> 1
+        current_state = format(xor_output | shift, '0{}b'.format(len(
+            current_state)))
 
 
